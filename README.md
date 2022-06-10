@@ -1,5 +1,5 @@
 # VelocitySystem
-ProxySystem for Velocity | by byRaudy
+ProxySystem for Velocity by byRaudy
 
 ## Download
 - https://kotori.network/download/velocitysystem-1.0.jar/
