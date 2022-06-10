@@ -126,8 +126,8 @@ public class MySQLManager {
     }
 
     public ResultSet getDatabaseResult(String query) {
-        PreparedStatement preparedStatement;
-        ResultSet resultSet;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
         try {
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
@@ -135,6 +135,13 @@ public class MySQLManager {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
             return null;
+        } finally {
+            try {
+                resultSet.close();
+                preparedStatement.close();
+            } catch (SQLException exception) {
+                exception.printStackTrace();
+            }
         }
     }
 }
