@@ -17,6 +17,7 @@ import com.velocitypowered.api.command.CommandManager;
 import com.velocitypowered.api.event.EventManager;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
+import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 
@@ -63,7 +64,7 @@ public class VelocitySystem {
     }
 
     @Subscribe
-    public void onProxyInitialization(ProxyInitializeEvent event) {
+    public void handleProxyInitialization(ProxyInitializeEvent event) {
         EventManager eventManager = proxyServer.getEventManager();
         CommandManager commandManager = proxyServer.getCommandManager();
 
@@ -81,6 +82,11 @@ public class VelocitySystem {
         commandManager.register(new CheckCommand().build());
         commandManager.register(new UnbanCommand().build());
         commandManager.register(new UnmuteCommand().build());
+    }
+
+    @Subscribe
+    public void handleProxyShutdown(ProxyShutdownEvent event) {
+        this.mySQLManager.disconnectFromDatabase();
     }
 
     public static VelocitySystem getVelocitySystem() {

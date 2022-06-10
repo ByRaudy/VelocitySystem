@@ -37,7 +37,7 @@ ProxySystem für Velocity by ByRaudy
   - Step 1: Ziehe die 'velocitysystem-1.0.jar' in deinen Plugins Ordner von Velocity.
   - Step 2: Starte deinen Velocity Server.
   - Step 3: Du wirst Fehler in der Konsole sehen, daher stoppe deinen Velocity Server nun.
-  - Step 4: Guck in deinen 'pluigns' Ordner. Dort wirst du nun einen weiteren Ordner sehen, welcher 'VelocitySystem' heißt.
+  - Step 4: Guck in deinen 'plugins' Ordner. Dort wirst du nun einen weiteren Ordner sehen, welcher 'VelocitySystem' heißt.
   - Step 5: Gehe nun in diesen Ordner. Da siehst du jetzt alle Datein die du brauchst.
   - Step 6: Ändere alles so ab wie du willst.
   - Step 7: Starte deinen Velocity Server.
