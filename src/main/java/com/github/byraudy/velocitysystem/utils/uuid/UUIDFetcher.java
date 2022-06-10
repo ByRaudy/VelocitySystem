@@ -16,7 +16,7 @@ public class UUIDFetcher {
 
     public static String getName(UUID uuid) {
         if (nameCache.containsKey(uuid)) {
-            return (String) nameCache.get(uuid);
+            return nameCache.get(uuid);
         }
         try {
             HttpURLConnection con = (HttpURLConnection) (new URL("https://api.minetools.eu/uuid/" + uuid.toString().replaceAll("-", ""))).openConnection();
