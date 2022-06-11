@@ -48,3 +48,8 @@ ProxySystem für Velocity by ByRaudy
 - Alles ist in der 'config.json' sowie in der 'messages.json' einstellbar
 - Das VelocitySystem brauch aufgrund der Abspeicherung der Bans und Mutes eine Datenbankverbindung
   - Diese bitte in der 'mysql.json' eintragen
+
+### Meine Todo:
+- Teamchat
+- ReportSystem
+- Mehrere Sprachen
