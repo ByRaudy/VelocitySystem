@@ -19,6 +19,8 @@ Class created by ByRaudy
 ------------------------
 Discord: ByRaudy#9708
 Instagram: @byraudy
+
+Class by NachGecodet
  */
 public class Messages {
 
