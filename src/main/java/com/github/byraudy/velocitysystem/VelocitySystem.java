@@ -11,7 +11,6 @@ import com.github.byraudy.velocitysystem.manager.ConfigManager;
 import com.github.byraudy.velocitysystem.manager.MySQLManager;
 import com.github.byraudy.velocitysystem.manager.PunishManager;
 import com.github.byraudy.velocitysystem.manager.TablistManager;
-import com.github.byraudy.velocitysystem.utils.uuid.UUIDFetcher;
 import com.github.byraudy.velocitysystem.velocitysystem.BuildConstants;
 import com.google.inject.Inject;
 import com.velocitypowered.api.command.CommandManager;
@@ -23,7 +22,6 @@ import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 
 import java.sql.SQLException;
-import java.util.UUID;
 
 /*
 Class created by ByRaudy
