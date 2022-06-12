@@ -4,6 +4,9 @@ ProxySystem für Velocity by ByRaudy
 ## Download
 - https://kotori.network/download/velocitysystem-1.0.jar/
 
+## Support
+- https://dsc.gg/kotori.network
+
 ### Generell
 - Das VelocitySystem ist simple gesagt ein ProxySystem für Velocity.
 - Viele Server wollen einen sicheren Proxy, nutzen aber BungeeCord oder Waterfall.
@@ -45,3 +48,8 @@ ProxySystem für Velocity by ByRaudy
 - Alles ist in der 'config.json' sowie in der 'messages.json' einstellbar
 - Das VelocitySystem brauch aufgrund der Abspeicherung der Bans und Mutes eine Datenbankverbindung
   - Diese bitte in der 'mysql.json' eintragen
+
+### Meine Todo:
+- Teamchat
+- ReportSystem
+- Mehrere Sprachen

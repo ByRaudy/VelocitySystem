@@ -17,7 +17,7 @@ public class HubCommand implements SimpleCommand {
     public void execute(Invocation invocation) {
         Player player = (Player) invocation.source();
 
-        if (!player.getCurrentServer().get().getServerInfo().getName().startsWith("Lobby-")) {
+        if (!player.getCurrentServer().get().getServerInfo().getName().equals(VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("lobby_name"))) {
             player.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("hub_message", VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("lobby_name")));
             player.createConnectionRequest(VelocitySystem.getVelocitySystem().getProxyServer().getServer(VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("lobby_name")).get()).connect();
             player.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("hub_message_complete", VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("lobby_name")));
