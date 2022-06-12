@@ -12,13 +12,9 @@ import java.io.PrintWriter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/*
-Class created by ByRaudy
-------------------------
-Discord: ByRaudy#9708
-Instagram: @byraudy
-
-Class by NachGecodet
+/**
+ * @author NachGecodet
+ * @version 1.0
  */
 public class Config {
 
@@ -41,14 +37,14 @@ public class Config {
 
         if (!file.exists()) {
             try (PrintWriter writer = new PrintWriter(file)) {
-                writer.print(gson.toJson(json = new JsonObject()));
                 initProperties();
+                writer.print(gson.toJson(json));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         } else {
             try {
-                json = new JsonParser().parse(new FileReader(file)).getAsJsonObject();
+                json = JsonParser.parseReader(new FileReader(file)).getAsJsonObject();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -56,6 +52,7 @@ public class Config {
     }
 
     private void initProperties() {
+        json = new JsonObject();
         json.addProperty("maintenance", true);
         json.addProperty("maintenance_protocol", "§4Wartungsarbeiten");
         json.addProperty("maintenance_message", "§f§lDeinServer.net §8| §7Minecraft Netzwerk \n \n §8» §cDas Netzwerk befindet sich derzeit in Wartungsarbeiten§8.");
@@ -68,7 +65,6 @@ public class Config {
         json.addProperty("tablist_header", "\n §f§lDeinServer.net §8| §7Minecraft Netzwerk \n §7Server §8» §f%server% \n §7Spieler §8» §f%online_players%§8/§f%max_players% \n");
         json.addProperty("tablist_footer", "\n §7Discord §8» §fdc.DeinServer.net \n §7Twitter §8» §f@DeinServerNET §7\n §8» §f§lVelocitySystem by ByRaudy \n");
         json.addProperty("lobby_name", "Lobby-1");
-        save();
     }
 
     public void save() {

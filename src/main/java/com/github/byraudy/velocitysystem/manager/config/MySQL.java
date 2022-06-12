@@ -12,13 +12,9 @@ import java.io.PrintWriter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/*
-Class created by ByRaudy
-------------------------
-Discord: ByRaudy#9708
-Instagram: @byraudy
-
-Class by NachGecodet
+/**
+ * @author NachGecodet
+ * @version 1.0
  */
 public class MySQL {
 
@@ -40,15 +36,15 @@ public class MySQL {
         }
 
         if (!file.exists()) {
-            try (final PrintWriter writer = new PrintWriter(file)) {
-                writer.print(gson.toJson(json = new JsonObject()));
+            try (PrintWriter writer = new PrintWriter(file)) {
                 initProperties();
+                writer.print(gson.toJson(json));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         } else {
             try {
-                json = new JsonParser().parse(new FileReader(file)).getAsJsonObject();
+                json = JsonParser.parseReader(new FileReader(file)).getAsJsonObject();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -56,12 +52,12 @@ public class MySQL {
     }
 
     private void initProperties() {
+        json = new JsonObject();
         json.addProperty("mysql_host", "127.0.0.1");
         json.addProperty("mysql_port", "3306");
         json.addProperty("mysql_database", "proxysystem");
         json.addProperty("mysql_user", "user");
         json.addProperty("mysql_password", "password");
-        save();
     }
 
     public void save() {

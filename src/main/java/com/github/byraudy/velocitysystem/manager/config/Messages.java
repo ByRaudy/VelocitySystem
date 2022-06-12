@@ -14,13 +14,9 @@ import java.text.MessageFormat;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/*
-Class created by ByRaudy
-------------------------
-Discord: ByRaudy#9708
-Instagram: @byraudy
-
-Class by NachGecodet
+/**
+ * @author NachGecodet
+ * @version 1.0
  */
 public class Messages {
 
@@ -42,15 +38,15 @@ public class Messages {
         }
 
         if (!file.exists()) {
-            try (final PrintWriter writer = new PrintWriter(file)) {
-                writer.print(gson.toJson(json = new JsonObject()));
+            try (PrintWriter writer = new PrintWriter(file)) {
                 initProperties();
+                writer.print(gson.toJson(json));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         } else {
             try {
-                json = new JsonParser().parse(new FileReader(file)).getAsJsonObject();
+                json = JsonParser.parseReader(new FileReader(file)).getAsJsonObject();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
@@ -58,6 +54,7 @@ public class Messages {
     }
 
     private void initProperties() {
+        json = new JsonObject();
         json.addProperty("prefix", "§8[§f§lVelocitySystem§8] §7");
         json.addProperty("maintenance_joinmessage", "§cDas Netzwerk ist derzeit in Wartungsarbeiten§8.");
         json.addProperty("ping_message", "§7Dein Ping beträgt zurzeit §f§l{0}ms§8.");
@@ -93,7 +90,6 @@ public class Messages {
         json.addProperty("check_player_ban_no_message", "§c{0} §7ist derzeit nicht gebannt§8.");
         json.addProperty("check_player_mute_yes_message", "§c{0} §7ist von §4{1} §7wegen §e{2} §7für §b{3} §7gemutet§8.");
         json.addProperty("check_player_mute_no_message", "§c{0} §7ist derzeit nicht gemutet§8.");
-        save();
     }
 
     public String getPrefix() {

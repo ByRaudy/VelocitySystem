@@ -13,16 +13,13 @@ public class UUIDTypeAdapter extends TypeAdapter<UUID> {
         return value.toString().replace("-", "");
     }
 
-
     public static UUID fromString(String input) {
         return UUID.fromString(input.replaceFirst("(\\w{8})(\\w{4})(\\w{4})(\\w{4})(\\w{12})", "$1-$2-$3-$4-$5"));
     }
 
-
     public void write(JsonWriter out, UUID value) throws IOException {
         out.value(fromUUID(value));
     }
-
 
     public UUID read(JsonReader in) throws IOException {
         return fromString(in.nextString());
