@@ -12,13 +12,9 @@ import java.io.PrintWriter;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/*
-Class created by ByRaudy
-------------------------
-Discord: ByRaudy#9708
-Instagram: @byraudy
-
-Class by NachGecodet
+/**
+ * @author NachGecodet
+ * @version 1.0
  */
 public class Config {
 
