@@ -15,8 +15,9 @@ ProxySystem für Velocity by ByRaudy
 - In meinem VelocitySystem sind viele nützliche und hilfreiche Features für Minecraft Server eingebaut.
 
 ### GitHub & Code
-- Du darfst jederzeit das VelocitySystem forken, umschreiben sowie nutzen.
-  - Dir gefällt das, was du umgeschrieben hast? -> pull request
+- Du darfst jederzeit das VelocitySystem als jar, sowie als Source runterladen, und verändern.
+  - Dir ist jedoch nicht gestattet, das VelocitySystem zu froken & eine pull request zu starten.
+  - Ausnahmen: @NachGecodet
 - Du darfst das VelocitySystem niemals, egal ob umgeschrieben oder nicht, als dein eigenes ausgeben.
 
 ### Was beeinhält das VelocitySystem?
