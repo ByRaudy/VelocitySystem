@@ -17,6 +17,7 @@ ProxySystem für Velocity by ByRaudy
 ### GitHub & Code
 - Du darfst jederzeit das VelocitySystem als jar, sowie als Source runterladen, und verändern.
   - Dir ist jedoch nicht gestattet, das VelocitySystem zu froken & eine pull request zu starten.
+    - Warum? Ich möchte das VelocitySystem weiterhin als Hobby bzw. Nebenprojekt weiterentwickeln.
   - Ausnahmen: @NachGecodet
 - Du darfst das VelocitySystem niemals, egal ob umgeschrieben oder nicht, als dein eigenes ausgeben.
 
