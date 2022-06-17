@@ -4,14 +4,11 @@ import com.github.byraudy.velocitysystem.commands.HubCommand;
 import com.github.byraudy.velocitysystem.commands.PingCommand;
 import com.github.byraudy.velocitysystem.commands.admin.EndCommand;
 import com.github.byraudy.velocitysystem.commands.punishment.*;
+import com.github.byraudy.velocitysystem.commands.team.TeamChatCommand;
 import com.github.byraudy.velocitysystem.listener.LoginListener;
 import com.github.byraudy.velocitysystem.listener.PlayerChatListener;
 import com.github.byraudy.velocitysystem.listener.ProxyPingListener;
-import com.github.byraudy.velocitysystem.manager.ConfigManager;
-import com.github.byraudy.velocitysystem.manager.MySQLManager;
-import com.github.byraudy.velocitysystem.manager.PunishManager;
-import com.github.byraudy.velocitysystem.manager.TablistManager;
-import com.github.byraudy.velocitysystem.velocitysystem.BuildConstants;
+import com.github.byraudy.velocitysystem.manager.*;
 import com.google.inject.Inject;
 import com.velocitypowered.api.command.CommandManager;
 import com.velocitypowered.api.event.EventManager;
@@ -20,6 +17,7 @@ import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.event.proxy.ProxyShutdownEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
+import lombok.Getter;
 
 import java.sql.SQLException;
 
@@ -32,10 +30,11 @@ Instagram: @byraudy
 @Plugin(
         id = "velocitysystem",
         name = "VelocitySystem",
-        version = BuildConstants.VERSION,
+        version = "1.0.0",
         description = "ProxySystem for Velocity",
         authors = {"ByRaudy"}
 )
+@Getter
 public class VelocitySystem {
 
     private static VelocitySystem velocitySystem;
@@ -43,6 +42,7 @@ public class VelocitySystem {
     private final ConfigManager configManager;
     private MySQLManager mySQLManager;
     private final PunishManager punishManager;
+    private final TeamChatManager teamChatManager;
 
     @Inject
     public VelocitySystem(ProxyServer proxyServer) {
@@ -61,6 +61,10 @@ public class VelocitySystem {
         System.out.println("VELOCITYSYSTEM: Trying to init PunishManager...");
         this.punishManager = new PunishManager();
         System.out.println("VELOCITYSYSTEM: Successfull");
+        System.out.println("VELOCITYSYSTEM: Trying to init TeamChatManager...");
+        this.teamChatManager = new TeamChatManager();
+        System.out.println("VELOCITYSYSTEM: Successfull");
+        System.out.println("VELOCITYSYSTEM: VelocitySystem is successfully started.");
     }
 
     @Subscribe
@@ -76,6 +80,7 @@ public class VelocitySystem {
         commandManager.register(commandManager.metaBuilder("hub").aliases("l", "lobby").build(), new HubCommand());
         commandManager.register(commandManager.metaBuilder("ping").build(), new PingCommand());
         commandManager.register(new EndCommand().build());
+        commandManager.register(new TeamChatCommand().build());
         commandManager.register(new BanCommand().build());
         commandManager.register(new MuteCommand().build());
         commandManager.register(new KickCommand().build());
@@ -95,17 +100,5 @@ public class VelocitySystem {
 
     public ProxyServer getProxyServer() {
         return proxyServer;
-    }
-
-    public ConfigManager getConfigManager() {
-        return configManager;
-    }
-
-    public MySQLManager getMySQLManager() {
-        return mySQLManager;
-    }
-
-    public PunishManager getPunishManager() {
-        return punishManager;
     }
 }

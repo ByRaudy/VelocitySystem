@@ -75,7 +75,7 @@ public class UUIDFetcher {
     }
 
     /**
-     *  Returns the name of the player if there found
+     * Returns the name of the player if there found
      *
      * @param uuid The uuid of the player
      * @return The name result
@@ -98,7 +98,7 @@ public class UUIDFetcher {
     }
 
     /**
-     *  Returns the uuid of the player if there found
+     * Returns the uuid of the player if there found
      *
      * @param name The name of the player
      * @return The uuid result

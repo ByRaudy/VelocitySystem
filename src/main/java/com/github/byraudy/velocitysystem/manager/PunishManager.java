@@ -79,34 +79,19 @@ public class PunishManager {
     }
 
     public boolean isBanned(UUID uuid) {
-        ResultSet resultSet = VelocitySystem.getVelocitySystem().getMySQLManager().getDatabaseResult("SELECT time FROM bannedPlayerData WHERE playerUuid='" + uuid + "'");
-        try {
+        try (ResultSet resultSet = VelocitySystem.getVelocitySystem().getMySQLManager().getDatabaseResult("SELECT time FROM bannedPlayerData WHERE playerUuid='" + uuid + "'")) {
             return resultSet.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException ignored) {
             return false;
-        } finally {
-            try {
-                resultSet.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 
     public boolean isMuted(UUID uuid) {
-        ResultSet resultSet = VelocitySystem.getVelocitySystem().getMySQLManager().getDatabaseResult("SELECT time FROM mutedPlayerData WHERE playerUuid='" + uuid + "'");
-        try {
+        try (ResultSet resultSet = VelocitySystem.getVelocitySystem().getMySQLManager().getDatabaseResult("SELECT time FROM mutedPlayerData WHERE playerUuid='" + uuid + "'")) {
             return resultSet.next();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
-        } finally {
-            try {
-                resultSet.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
     }
 

@@ -46,7 +46,7 @@ public class UnbanCommand {
     }
 
     private int unban(Player player, UUID target) {
-        if(VelocitySystem.getVelocitySystem().getPunishManager().isBanned(target)) {
+        if (VelocitySystem.getVelocitySystem().getPunishManager().isBanned(target)) {
             VelocitySystem.getVelocitySystem().getPunishManager().unbanPlayer(target, player);
             return 1;
         }

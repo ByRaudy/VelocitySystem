@@ -72,7 +72,7 @@ public class MuteCommand {
             }
 
             targetPlayer.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("mute_player_message", reason, VelocitySystem.getVelocitySystem().getPunishManager().getReamainingTime(duration)));
-    }
+        }
 
         VelocitySystem.getVelocitySystem().getPunishManager().mutePlayer(target, UUIDFetcher.getName(target), reason, duration, player);
         return 1;

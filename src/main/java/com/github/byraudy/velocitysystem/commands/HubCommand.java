@@ -1,7 +1,6 @@
 package com.github.byraudy.velocitysystem.commands;
 
 import com.github.byraudy.velocitysystem.VelocitySystem;
-import com.github.byraudy.velocitysystem.utils.uuid.UUIDFetcher;
 import com.velocitypowered.api.command.SimpleCommand;
 import com.velocitypowered.api.proxy.Player;
 

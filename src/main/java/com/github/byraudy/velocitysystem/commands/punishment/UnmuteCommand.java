@@ -45,7 +45,7 @@ public class UnmuteCommand {
     }
 
     private int unmute(Player player, UUID target) {
-        if(VelocitySystem.getVelocitySystem().getPunishManager().isMuted(target)) {
+        if (VelocitySystem.getVelocitySystem().getPunishManager().isMuted(target)) {
             VelocitySystem.getVelocitySystem().getPunishManager().unmutePlayer(target, player);
             return 1;
         }

@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.github.byraudy.velocitysystem'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 compileJava.options.encoding = 'UTF-8'
 
 repositories {
@@ -21,6 +21,9 @@ repositories {
 dependencies {
     compileOnly 'com.velocitypowered:velocity-api:3.1.0-SNAPSHOT'
     compileOnly group: 'net.kyori', name: 'adventure-text-minimessage', version: '4.10.1'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'com.velocitypowered:velocity-api:3.1.0-SNAPSHOT'
     implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
 }

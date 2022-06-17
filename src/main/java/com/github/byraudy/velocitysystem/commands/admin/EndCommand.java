@@ -17,7 +17,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class EndCommand  {
+public class EndCommand {
 
     public BrigadierCommand build() {
         LiteralCommandNode<CommandSource> node = LiteralArgumentBuilder.<CommandSource>literal("end").requires(commandSource -> commandSource.hasPermission("velocitysystem.end")).executes(this::sendHelpMessage)
@@ -55,7 +55,7 @@ public class EndCommand  {
     }
 
     private int executeAfterShutdown(CommandContext<CommandSource> context, int secounds) {
-        if(secounds != 5 && secounds != 10 && secounds != 20 && secounds != 30) {
+        if (secounds != 5 && secounds != 10 && secounds != 20 && secounds != 30) {
             context.getSource().sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("message_end_secounds"));
             return 0;
         }
@@ -63,7 +63,8 @@ public class EndCommand  {
         AtomicInteger taskSecounds = new AtomicInteger(secounds);
         VelocitySystem.getVelocitySystem().getProxyServer().getScheduler().buildTask(VelocitySystem.getVelocitySystem(), () -> {
             switch (taskSecounds.get()) {
-                case 30, 25, 20, 15, 10, 5, 4, 3, 2, 1, 0 -> VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(player -> player.showTitle(Title.title(Component.text("§c§l" + taskSecounds.get()), VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessageWithoutPrefix("end_title", taskSecounds))));
+                case 30, 25, 20, 15, 10, 5, 4, 3, 2, 1, 0 ->
+                        VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(player -> player.showTitle(Title.title(Component.text("§c§l" + taskSecounds.get()), VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessageWithoutPrefix("end_title", taskSecounds))));
                 case -1 -> {
                     VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(player -> player.disconnect(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("message_end_screen")));
                     VelocitySystem.getVelocitySystem().getProxyServer().shutdown();

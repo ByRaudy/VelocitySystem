@@ -56,6 +56,7 @@ public class Messages {
     private void initProperties() {
         json = new JsonObject();
         json.addProperty("prefix", "§8[§f§lVelocitySystem§8] §7");
+        json.addProperty("teamchat_prefix", "§8[§c§lTeamchat§8] §7");
         json.addProperty("maintenance_joinmessage", "§cDas Netzwerk ist derzeit in Wartungsarbeiten§8.");
         json.addProperty("ping_message", "§7Dein Ping beträgt zurzeit §f§l{0}ms§8.");
         json.addProperty("hub_message", "§7Es wird versucht§8, §7dich mit {0} zu verbinden§8!");
@@ -66,6 +67,14 @@ public class Messages {
         json.addProperty("message_end_screen", "§cDer Proxy wurde gestoppt§8!");
         json.addProperty("message_end_secounds", "§7Bitte wähle eine §f§lgültige §7Sekundenzahl§8!");
         json.addProperty("end_title", "§7Der Proxy stoppt in §c§l{0} §7Sekunden§8.");
+        json.addProperty("teamchat_messages", "{0}§7Nutze§8: §7/teamchat <list/notify> \n{0}Oder schreibe in den §cTeamchat §7mit \"§c@Team <Nachricht>\"");
+        json.addProperty("teamchat_message", "{0}§c{1}§8(§e{2}§8) §8-> §7{3}");
+        json.addProperty("teamchat_loggedout", "{0}Du bekommst derzeit §ckeine §7Benachrichtigungen vom §cTeamchat§8! §7Ändere dies mit §c/teamchat§8!");
+        json.addProperty("teamchat_list", "§7Alle §cTeammitglieder§8, §7welche derzeit online sind§8:");
+        json.addProperty("teamchat_list_player", "§8- §c{0} §8| §7Verbunden mit §e{1}");
+        json.addProperty("teamchat_notify_add", "{0}§7Dir wird ab jetzt der §cTeamchat §7angezeigt§8.");
+        json.addProperty("teamchat_notify_remove", "{0}§7Dir wird der §cTeamchat §7nun nicht mehr angezeigt§8.");
+        json.addProperty("teamchat_error", "{0}§7Bitte schreibe §8\"§c@Team §8\" §7vor deine Nachricht§8! §8(§7Beachte das Leerzeichen§8)");
         json.addProperty("kick_help_message", "§7Nutze§8: §7/kick <Spieler> <Grund>");
         json.addProperty("kick_cant_player_message", "§7Du darfst diesen Spieler nicht kicken§8!");
         json.addProperty("kick_player_message", "§c{0} §7wurde von §4{1} §7für §e{2} §7gekickt§8!");
@@ -94,6 +103,10 @@ public class Messages {
 
     public String getPrefix() {
         return json.get("prefix").getAsString();
+    }
+
+    public String getTeamchatPrefix() {
+        return json.get("teamchat_prefix").getAsString();
     }
 
     public Component getMessage(String message, Object... arguments) {
