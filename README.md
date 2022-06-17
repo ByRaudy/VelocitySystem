@@ -62,6 +62,6 @@ ProxySystem für Velocity by ByRaudy
 
 ### Meine Todo:
 
-- Teamchat
+- JoinMe
 - ReportSystem
 - Mehrere Sprachen
