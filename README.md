@@ -30,6 +30,7 @@ ProxySystem für Velocity by ByRaudy
 
 - Ban-, Mute- sowie KickSystem
     - CheckSystem
+- Teamchat System
 - Eigenes Wartungsarbeiten System
 - MOTD & Tablist (sogar mit farbverläufen möglich | Dafür 'gradients' in der config auf 'true' setzen)
 - Einen eigenen /end Befehl, damit du Spieler vor dem restart des Proxies zu warnen
@@ -42,6 +43,8 @@ ProxySystem für Velocity by ByRaudy
 - Check: velocitysystem.check
 - Unban: velocitysystem.unban
 - Unmute: velocitysystem.unmute
+- Teamchat: velocitysystem.teamchat
+- Spieler wird bei "/teamchat list" gelistet: velocitysystem.team
 - Wärend der Wartungsarbeiten joinen können: velocitysystem.maintenancejoin
 
 ### Config
