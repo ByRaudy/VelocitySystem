@@ -2,7 +2,7 @@
 ProxySystem für Velocity by ByRaudy
 
 ## Download
-- https://kotori.network/download/velocitysystem-1.0.jar/
+- https://www.spigotmc.org/resources/velocitysystem.102671/
 
 ## Support
 - https://dsc.gg/kotori.network
