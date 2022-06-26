@@ -72,7 +72,7 @@ public class VelocitySystem {
         EventManager eventManager = proxyServer.getEventManager();
         CommandManager commandManager = proxyServer.getCommandManager();
 
-        eventManager.register(this, new ProxyPingListener());
+        eventManager.register(this, new ProxyPingListener(this));
         eventManager.register(this, new LoginListener());
         eventManager.register(this, new PlayerChatListener());
         eventManager.register(this, new TablistManager(this));

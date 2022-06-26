@@ -25,31 +25,37 @@ public class TablistManager {
 
     @Subscribe
     public void handleLogin(LoginEvent event) {
-        VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(current -> {
-            Component headerComponent = Components.parse(config.getString("tablist_header").replace("%server%", current.getCurrentServer().get().getServerInfo().getName()).replace("%online_players%", VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().size() + "").replace("%max_players%", VelocitySystem.getVelocitySystem().getProxyServer().getConfiguration().getShowMaxPlayers() + ""));
-            Component footerComponent = Components.parse(config.getString("tablist_footer"));
+        if(config.getBoolean("tablist")) {
+            VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(current -> {
+                Component headerComponent = Components.parse(config.getString("tablist_header").replace("%server%", current.getCurrentServer().get().getServerInfo().getName()).replace("%online_players%", VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().size() + "").replace("%max_players%", VelocitySystem.getVelocitySystem().getProxyServer().getConfiguration().getShowMaxPlayers() + ""));
+                Component footerComponent = Components.parse(config.getString("tablist_footer"));
 
-            current.sendPlayerListHeaderAndFooter(headerComponent, footerComponent);
-        });
+                current.sendPlayerListHeaderAndFooter(headerComponent, footerComponent);
+            });
+        }
     }
 
     @Subscribe
     public void handleDisconnect(DisconnectEvent event) {
-        VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(current -> {
-            Component headerComponent = Components.parse(config.getString("tablist_header").replace("%server%", current.getCurrentServer().get().getServerInfo().getName()).replace("%online_players%", VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().size() + "").replace("%max_players%", VelocitySystem.getVelocitySystem().getProxyServer().getConfiguration().getShowMaxPlayers() + ""));
-            Component footerComponent = Components.parse(config.getString("tablist_footer"));
+        if(config.getBoolean("tablist")) {
+            VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(current -> {
+                Component headerComponent = Components.parse(config.getString("tablist_header").replace("%server%", current.getCurrentServer().get().getServerInfo().getName()).replace("%online_players%", VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().size() + "").replace("%max_players%", VelocitySystem.getVelocitySystem().getProxyServer().getConfiguration().getShowMaxPlayers() + ""));
+                Component footerComponent = Components.parse(config.getString("tablist_footer"));
 
-            current.sendPlayerListHeaderAndFooter(headerComponent, footerComponent);
-        });
+                current.sendPlayerListHeaderAndFooter(headerComponent, footerComponent);
+            });
+        }
     }
 
     @Subscribe
     public void handleServerPostConnect(ServerPostConnectEvent event) {
-        VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(current -> {
-            Component headerComponent = Components.parse(config.getString("tablist_header").replace("%server%", current.getCurrentServer().get().getServerInfo().getName()).replace("%online_players%", VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().size() + "").replace("%max_players%", VelocitySystem.getVelocitySystem().getProxyServer().getConfiguration().getShowMaxPlayers() + ""));
-            Component footerComponent = Components.parse(config.getString("tablist_footer"));
+        if(config.getBoolean("tablist")) {
+            VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(current -> {
+                Component headerComponent = Components.parse(config.getString("tablist_header").replace("%server%", current.getCurrentServer().get().getServerInfo().getName()).replace("%online_players%", VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().size() + "").replace("%max_players%", VelocitySystem.getVelocitySystem().getProxyServer().getConfiguration().getShowMaxPlayers() + ""));
+                Component footerComponent = Components.parse(config.getString("tablist_footer"));
 
-            current.sendPlayerListHeaderAndFooter(headerComponent, footerComponent);
-        });
+                current.sendPlayerListHeaderAndFooter(headerComponent, footerComponent);
+            });
+        }
     }
 }

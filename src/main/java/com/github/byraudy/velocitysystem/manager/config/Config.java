@@ -60,8 +60,10 @@ public class Config {
         json.addProperty("ping_info_message", "\n §f§lDeinServer.net §8| §7Minecraft Netzwerk \n \n §8» §fdc.DeinServer.net \n §8» §f@DeinServerNET \n");
         json.addProperty("gradients", false);
         json.addProperty("server_name", "DeinServer.net");
+        json.addProperty("motd", true);
         json.addProperty("motd.line1", "§f§lDeinServer.net §8| §7Minecraft Netzwerk");
         json.addProperty("motd.line2", "  §8» §7Editiere die MOTD in der config.json§8!");
+        json.addProperty("tablist", true);
         json.addProperty("tablist_header", "\n §f§lDeinServer.net §8| §7Minecraft Netzwerk \n §7Server §8» §f%server% \n §7Spieler §8» §f%online_players%§8/§f%max_players% \n");
         json.addProperty("tablist_footer", "\n §7Discord §8» §fdc.DeinServer.net \n §7Twitter §8» §f@DeinServerNET §7\n §8» §f§lVelocitySystem by ByRaudy \n");
         json.addProperty("lobby_name", "Lobby-1");

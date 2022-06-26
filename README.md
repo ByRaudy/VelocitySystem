@@ -8,7 +8,7 @@ ProxySystem für Velocity by ByRaudy
 
 ## Support
 
-- https://dsc.gg/kotori.network
+- https://dsc.gg/kotorinetwork
 
 ### Generell
 
@@ -21,7 +21,7 @@ ProxySystem für Velocity by ByRaudy
 ### GitHub & Code
 
 - Du darfst jederzeit das VelocitySystem als jar, sowie als Source runterladen, und verändern.
-    - Dir ist jedoch nicht gestattet, das VelocitySystem zu froken & eine pull request zu starten.
+    - Dir ist jedoch nicht gestattet eine pull request zu starten.
     - Warum? Ich möchte das VelocitySystem weiterhin als Hobby bzw. Nebenprojekt weiterentwickeln.
     - Ausnahmen: @NachGecodet(https://github.com/NachGecodet)
 - Du darfst das VelocitySystem niemals, egal ob umgeschrieben oder nicht, als dein eigenes ausgeben.
@@ -45,6 +45,7 @@ ProxySystem für Velocity by ByRaudy
 - Unmute: velocitysystem.unmute
 - Teamchat: velocitysystem.teamchat
 - Spieler wird bei "/teamchat list" gelistet: velocitysystem.team
+- Warnung des Teamchats beim joinen: velocitysystem.team
 - Wärend der Wartungsarbeiten joinen können: velocitysystem.maintenancejoin
 
 ### Config
