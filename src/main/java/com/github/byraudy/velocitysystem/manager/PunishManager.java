@@ -19,19 +19,11 @@ Instagram: @byraudy
 public class PunishManager {
 
     public void banPlayer(UUID uuid, String playername, String reason, long seconds, Player banner) {
-        long end = 0;
-        if (seconds == -1) {
-            end = -1;
-        } else {
-            long current = System.currentTimeMillis();
-            long millis = seconds * 1000;
-            end = current + millis;
-        }
+        long end = calculateEnd(seconds);
 
-        long finalEnd = end;
         VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(player -> {
             if (player.hasPermission("velocitysystem.ban.see")) {
-                player.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("ban_message", playername, banner.getUsername(), reason, getReamainingTime(seconds)));
+                player.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("ban_message", playername, banner.getUsername(), reason, getReamainingTime(end)));
             }
         });
         VelocitySystem.getVelocitySystem().getMySQLManager().updateDatabase("INSERT INTO bannedPlayerData (playerName, playerUuid, time, reason, bannersName) VALUES ('" + playername + "','" + uuid + "','" + end + "','" + reason + "','" + banner.getUsername() + "')");
@@ -39,19 +31,10 @@ public class PunishManager {
 
     @SuppressWarnings("deprecation")
     public void mutePlayer(UUID uuid, String playername, String reason, long seconds, Player muter) {
-        long end = 0;
-        if (seconds == -1) {
-            end = -1;
-        } else {
-            long current = System.currentTimeMillis();
-            long millis = seconds * 1000;
-            end = current + millis;
-        }
-
-        final long finalEnd = end;
+        long end = calculateEnd(seconds);
         VelocitySystem.getVelocitySystem().getProxyServer().getAllPlayers().forEach(player -> {
             if (player.hasPermission("velocitysystem.ban.see")) {
-                player.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("mute_message", playername, muter.getUsername(), reason, getReamainingTime(finalEnd)));
+                player.sendMessage(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessage("mute_message", playername, muter.getUsername(), reason, getReamainingTime(end)));
             }
         });
 
@@ -81,7 +64,8 @@ public class PunishManager {
     public boolean isBanned(UUID uuid) {
         try (ResultSet resultSet = VelocitySystem.getVelocitySystem().getMySQLManager().getDatabaseResult("SELECT time FROM bannedPlayerData WHERE playerUuid='" + uuid + "'")) {
             return resultSet.next();
-        } catch (SQLException ignored) {
+        } catch (SQLException exception) {
+            exception.printStackTrace();
             return false;
         }
     }
@@ -89,8 +73,8 @@ public class PunishManager {
     public boolean isMuted(UUID uuid) {
         try (ResultSet resultSet = VelocitySystem.getVelocitySystem().getMySQLManager().getDatabaseResult("SELECT time FROM mutedPlayerData WHERE playerUuid='" + uuid + "'")) {
             return resultSet.next();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException exception) {
+            exception.printStackTrace();
             return false;
         }
     }
@@ -277,6 +261,16 @@ public class PunishManager {
             }
         }
         return list;
+    }
+
+    private long calculateEnd(long seconds) {
+        if (seconds == -1) {
+            return -1;
+        } else {
+            long current = System.currentTimeMillis();
+            long millis = seconds * 1000;
+            return current + millis;
+        }
     }
 
     public String getReamainingTime(long time) {
