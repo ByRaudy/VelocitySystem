@@ -4,7 +4,7 @@ ProxySystem für Velocity by ByRaudy
 
 ## Download
 
-- https://www.spigotmc.org/resources/velocitysystem.102671/
+- https://github.com/ByRaudy/VelocitySystem/releases/download/untagged-1b97991524e223dd0e5e/velocitysystem-1.0.jar
 
 ## Support
 
