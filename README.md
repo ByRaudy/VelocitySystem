@@ -1,6 +1,6 @@
 # VelocitySystem
 
-ProxySystem für Velocity by ByRaudy
+ProxySystem für Velocity by Jxnnik
 
 ## Download
 
@@ -8,7 +8,8 @@ ProxySystem für Velocity by ByRaudy
 
 ## Support
 
-- https://dsc.gg/kotorinetwork
+- Discord: Jannik#9708
+- Twitter: @Jxnnikk
 
 ### Generell
 
@@ -21,9 +22,6 @@ ProxySystem für Velocity by ByRaudy
 ### GitHub & Code
 
 - Du darfst jederzeit das VelocitySystem als jar, sowie als Source runterladen, und verändern.
-    - Dir ist jedoch nicht gestattet eine pull request zu starten.
-    - Warum? Ich möchte das VelocitySystem weiterhin als Hobby bzw. Nebenprojekt weiterentwickeln.
-    - Ausnahmen: @NachGecodet(https://github.com/NachGecodet)
 - Du darfst das VelocitySystem niemals, egal ob umgeschrieben oder nicht, als dein eigenes ausgeben.
 
 ### Was beeinhält das VelocitySystem?
