@@ -31,7 +31,7 @@ ProxySystem für Velocity by Jxnnik
 - Teamchat System
 - Eigenes Wartungsarbeiten System
 - MOTD & Tablist (sogar mit farbverläufen möglich | Dafür 'gradients' in der config auf 'true' setzen)
-- Einen eigenen /end Befehl, damit du Spieler vor dem restart des Proxies zu warnen
+- Einen eigenen /end Befehl, damit du Spieler vor dem restart des Proxies warnen kannst
 - /hub und /ping Befehl (Die Lobby ist in der config.json einstellbar)
 
 ### Permissions
@@ -44,11 +44,11 @@ ProxySystem für Velocity by Jxnnik
 - Teamchat: velocitysystem.teamchat
 - Spieler wird bei "/teamchat list" gelistet: velocitysystem.team
 - Warnung des Teamchats beim joinen: velocitysystem.team
-- Wärend der Wartungsarbeiten joinen können: velocitysystem.maintenancejoin
+- Während der Wartungsarbeiten joinen können: velocitysystem.maintenancejoin
 
 ### Config
 
-- Zuerst: Wie generiere ich die ganzen Datein?
+- Zuerst: Wie generiere ich die ganzen Dateien?
     - Step 1: Ziehe die 'velocitysystem-1.0.jar' in deinen Plugins Ordner von Velocity.
     - Step 2: Starte deinen Velocity Server.
     - Step 3: Du wirst Fehler in der Konsole sehen, daher stoppe deinen Velocity Server nun.
