@@ -72,7 +72,7 @@ public class BanCommand {
                 return 1;
             }
 
-            targetPlayer.disconnect(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessageWithoutPrefix("ban_screen_message", VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("server_name"), reason, VelocitySystem.getVelocitySystem().getPunishManager().calculateEnd(duration)));
+            targetPlayer.disconnect(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessageWithoutPrefix("ban_screen_message", VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("server_name"), reason, VelocitySystem.getVelocitySystem().getPunishManager().getReamainingTime(VelocitySystem.getVelocitySystem().getPunishManager().calculateEnd(duration) + 1)));
         }
 
         VelocitySystem.getVelocitySystem().getPunishManager().banPlayer(target, UUIDFetcher.getName(target), reason, duration, player);
