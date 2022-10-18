@@ -15,7 +15,6 @@ repositories {
         name = 'velocitypowered-repo'
         url = 'https://nexus.velocitypowered.com/repository/maven-public/'
     }
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
 }
 
 dependencies {
