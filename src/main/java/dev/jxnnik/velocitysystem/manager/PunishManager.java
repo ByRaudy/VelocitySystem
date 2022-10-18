@@ -264,7 +264,7 @@ public class PunishManager {
         return list;
     }
 
-    private long calculateEnd(long seconds) {
+    public long calculateEnd(long seconds) {
         if (seconds == -1) {
             return -1;
         } else {
