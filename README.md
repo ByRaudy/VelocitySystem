@@ -1,15 +1,15 @@
 # VelocitySystem
 
-ProxySystem für Velocity by Jxnnik
+ProxySystem für Velocity by ByRaudy | Jannik H.
 
 ## Download
 
-- https://github.com/ByRaudy/VelocitySystem/releases/download/untagged-1b97991524e223dd0e5e/velocitysystem-1.0.jar
+- [Github releases](https://github.com/ByRaudy/VelocitySystem/releases)
 
 ## Support
 
 - Discord: Jannik#9708
-- Twitter: @Jxnnikk
+- Twitter: @ByRaudy
 
 ### Generell
 
