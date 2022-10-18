@@ -63,12 +63,7 @@ public class BanCommand {
             return 1;
         }
 
-        Player targetPlayer = VelocitySystem.getVelocitySystem().getProxyServer().getPlayer(target).orElseGet(new Supplier<Player>() {
-            @Override
-            public Player get() {
-                return null;
-            }
-        });
+        Player targetPlayer = VelocitySystem.getVelocitySystem().getProxyServer().getPlayer(target).orElseGet(null);
 
         if (targetPlayer != null) {
             if (targetPlayer.hasPermission("velocitysystem.cantbebanned")) {
@@ -76,7 +71,7 @@ public class BanCommand {
                 return 1;
             }
 
-            player.disconnect(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessageWithoutPrefix("ban_screen_message", VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("server_name"), VelocitySystem.getVelocitySystem().getPunishManager().getBanReasonFromPlayersUuid(targetPlayer.getUniqueId()), VelocitySystem.getVelocitySystem().getPunishManager().getReamainingTime(duration)));
+            targetPlayer.disconnect(VelocitySystem.getVelocitySystem().getConfigManager().getMessages().getMessageWithoutPrefix("ban_screen_message", VelocitySystem.getVelocitySystem().getConfigManager().getConfig().getString("server_name"), VelocitySystem.getVelocitySystem().getPunishManager().getBanReasonFromPlayersUuid(targetPlayer.getUniqueId()), VelocitySystem.getVelocitySystem().getPunishManager().getReamainingTime(duration)));
         }
 
         VelocitySystem.getVelocitySystem().getPunishManager().banPlayer(target, UUIDFetcher.getName(target), reason, duration, player);

@@ -30,7 +30,7 @@ Instagram: @byraudy
 @Plugin(
         id = "velocitysystem",
         name = "VelocitySystem",
-        version = "1.0.0",
+        version = "1.0",
         description = "ProxySystem for Velocity",
         authors = {"ByRaudy"}
 )
