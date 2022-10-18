@@ -12,7 +12,8 @@ import java.util.List;
 Class created by ByRaudy
 ------------------------
 Discord: Jannik#9708
-Instagram: @byraudy
+Twitter: @ByRaudy
+Instagram: @jxnnik.official
  */
 @Getter
 public class TeamChatManager {

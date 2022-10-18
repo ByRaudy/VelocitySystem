@@ -7,6 +7,13 @@ import net.kyori.adventure.text.ComponentLike;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 
+/*
+Class created by ByRaudy
+------------------------
+Discord: Jannik#9708
+Twitter: @ByRaudy
+Instagram: @jxnnik.official
+ */
 public class Components {
 
     public static TextComponent ofChildren(final ComponentLike... children) {

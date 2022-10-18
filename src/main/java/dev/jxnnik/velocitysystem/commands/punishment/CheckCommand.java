@@ -20,7 +20,8 @@ import java.util.concurrent.CompletableFuture;
 Class created by ByRaudy
 ------------------------
 Discord: Jannik#9708
-Instagram: @byraudy
+Twitter: @ByRaudy
+Instagram: @jxnnik.official
  */
 public class CheckCommand {
 

@@ -17,6 +17,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/*
+Class created by ByRaudy
+------------------------
+Discord: Jannik#9708
+Twitter: @ByRaudy
+Instagram: @jxnnik.official
+ */
 public class EndCommand {
 
     public BrigadierCommand build() {
